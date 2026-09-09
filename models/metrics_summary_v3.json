@@ -1,0 +1,180 @@
+{
+    "best_model": "LightGBM",
+    "target_transform": "log1p(simulated_delay_min)",
+    "severe_delay_classifier_auc": 0.9787,
+    "confidence_cutoffs": {
+        "q33": 13.59,
+        "q66": 21.86
+    },
+    "quantile_coverage_pct": {
+        "p10_p90_non_capped": 79.06,
+        "p10_p90_overall": 75.84
+    },
+    "walk_forward_validation": {
+        "splits": [
+            {
+                "split": "2023-09-01 to 2023-10-31",
+                "train_rows": 70990,
+                "test_rows": 16589,
+                "noncap_mae": 25.2716,
+                "noncap_w10": 41.63,
+                "overall_mae": 28.3243,
+                "overall_w10": 39.9
+            },
+            {
+                "split": "2023-10-01 to 2023-11-30",
+                "train_rows": 78651,
+                "test_rows": 17497,
+                "noncap_mae": 25.0971,
+                "noncap_w10": 41.52,
+                "overall_mae": 27.9584,
+                "overall_w10": 39.66
+            },
+            {
+                "split": "2023-11-01 to 2023-12-31",
+                "train_rows": 87579,
+                "test_rows": 17603,
+                "noncap_mae": 25.0635,
+                "noncap_w10": 41.62,
+                "overall_mae": 27.8454,
+                "overall_w10": 39.6
+            }
+        ],
+        "mean_noncap_mae": 25.14,
+        "std_noncap_mae": 0.11,
+        "mean_noncap_w10": 41.59,
+        "std_noncap_w10": 0.06
+    },
+    "metrics_non_capped": {
+        "Linear Regression": {
+            "MAE": 32.7087,
+            "RMSE": 63.4132,
+            "R2": 0.1718,
+            "Within_5min_%": 18.75,
+            "Within_10min_%": 35.6
+        },
+        "Decision Tree": {
+            "MAE": 27.6148,
+            "RMSE": 45.9947,
+            "R2": 0.5643,
+            "Within_5min_%": 23.44,
+            "Within_10min_%": 41.49
+        },
+        "Random Forest": {
+            "MAE": 25.2776,
+            "RMSE": 40.2644,
+            "R2": 0.6661,
+            "Within_5min_%": 22.91,
+            "Within_10min_%": 41.41
+        },
+        "Gradient Boosting": {
+            "MAE": 25.0359,
+            "RMSE": 39.4377,
+            "R2": 0.6797,
+            "Within_5min_%": 22.87,
+            "Within_10min_%": 41.2
+        },
+        "HistGradient Boosting": {
+            "MAE": 25.0635,
+            "RMSE": 39.7777,
+            "R2": 0.6741,
+            "Within_5min_%": 23.19,
+            "Within_10min_%": 41.62
+        },
+        "LightGBM": {
+            "MAE": 24.9101,
+            "RMSE": 39.4304,
+            "R2": 0.6798,
+            "Within_5min_%": 23.28,
+            "Within_10min_%": 41.94
+        }
+    },
+    "metrics_overall": {
+        "Linear Regression": {
+            "MAE": 39.2483,
+            "RMSE": 81.3231,
+            "R2": 0.2389,
+            "Within_5min_%": 17.97,
+            "Within_10min_%": 34.14
+        },
+        "Decision Tree": {
+            "MAE": 29.8217,
+            "RMSE": 50.0802,
+            "R2": 0.7114,
+            "Within_5min_%": 23.56,
+            "Within_10min_%": 40.77
+        },
+        "Random Forest": {
+            "MAE": 28.129,
+            "RMSE": 44.7894,
+            "R2": 0.7691,
+            "Within_5min_%": 21.79,
+            "Within_10min_%": 39.41
+        },
+        "Gradient Boosting": {
+            "MAE": 28.1758,
+            "RMSE": 43.8825,
+            "R2": 0.7784,
+            "Within_5min_%": 21.75,
+            "Within_10min_%": 39.19
+        },
+        "HistGradient Boosting": {
+            "MAE": 27.8454,
+            "RMSE": 43.5183,
+            "R2": 0.782,
+            "Within_5min_%": 22.06,
+            "Within_10min_%": 39.6
+        },
+        "LightGBM": {
+            "MAE": 27.7319,
+            "RMSE": 43.3599,
+            "R2": 0.7836,
+            "Within_5min_%": 22.15,
+            "Within_10min_%": 39.9
+        }
+    },
+    "metrics_capped": {
+        "Linear Regression": {
+            "MAE": 167.0332,
+            "RMSE": 239.3032,
+            "R2": 0.0,
+            "Within_5min_%": 2.8,
+            "Within_10min_%": 5.6
+        },
+        "Decision Tree": {
+            "MAE": 72.9449,
+            "RMSE": 100.885,
+            "R2": 0.0,
+            "Within_5min_%": 25.9,
+            "Within_10min_%": 26.72
+        },
+        "Random Forest": {
+            "MAE": 83.8453,
+            "RMSE": 97.6034,
+            "R2": 0.0,
+            "Within_5min_%": 0.0,
+            "Within_10min_%": 0.47
+        },
+        "Gradient Boosting": {
+            "MAE": 89.5298,
+            "RMSE": 95.7193,
+            "R2": 0.0,
+            "Within_5min_%": 0.0,
+            "Within_10min_%": 0.0
+        },
+        "HistGradient Boosting": {
+            "MAE": 82.2045,
+            "RMSE": 89.3426,
+            "R2": 0.0,
+            "Within_5min_%": 0.0,
+            "Within_10min_%": 0.0
+        },
+        "LightGBM": {
+            "MAE": 82.871,
+            "RMSE": 90.7583,
+            "R2": 0.0,
+            "Within_5min_%": 0.0,
+            "Within_10min_%": 0.0
+        }
+    }
+}

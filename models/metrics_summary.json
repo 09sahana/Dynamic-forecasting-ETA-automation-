@@ -1,0 +1,47 @@
+{
+    "best_model": "LightGBM",
+    "metrics": {
+        "Linear Regression": {
+            "MAE": 29.9216,
+            "RMSE": 44.7628,
+            "R2": 0.7694,
+            "Within_5min_%": 15.32,
+            "Within_10min_%": 30.77
+        },
+        "Decision Tree": {
+            "MAE": 29.713,
+            "RMSE": 47.1955,
+            "R2": 0.7437,
+            "Within_5min_%": 16.04,
+            "Within_10min_%": 32.33
+        },
+        "Random Forest": {
+            "MAE": 28.3052,
+            "RMSE": 42.5522,
+            "R2": 0.7916,
+            "Within_5min_%": 14.63,
+            "Within_10min_%": 30.99
+        },
+        "Gradient Boosting": {
+            "MAE": 28.4815,
+            "RMSE": 42.113,
+            "R2": 0.7959,
+            "Within_5min_%": 13.0,
+            "Within_10min_%": 28.88
+        },
+        "HistGradient Boosting": {
+            "MAE": 28.207,
+            "RMSE": 42.0553,
+            "R2": 0.7965,
+            "Within_5min_%": 14.17,
+            "Within_10min_%": 30.23
+        },
+        "LightGBM": {
+            "MAE": 28.1587,
+            "RMSE": 42.1258,
+            "R2": 0.7958,
+            "Within_5min_%": 14.63,
+            "Within_10min_%": 30.37
+        }
+    }
+}

@@ -1,0 +1,197 @@
+{
+    "best_model": "LightGBM",
+    "canonical_point_prediction": "Quantile p50 Regressor",
+    "canonical_rationale": "Guarantees point prediction lies within [p10, p90] range and maximizes Within-10min accuracy",
+    "target_transform": "log1p(simulated_delay_min)",
+    "severe_delay_classifier_auc": 0.9787,
+    "chronic_trains_evaluation": {
+        "chronic_trains": [
+            12508,
+            15648,
+            12507,
+            12509,
+            15630
+        ],
+        "chronic_mae_v3_baseline": 55.38,
+        "chronic_mae_v4_tier_model": 47.76,
+        "chronic_mae_drop_minutes": 7.62,
+        "control_train_12137_mae": 19.45
+    },
+    "confidence_cutoffs": {
+        "q33": 13.13,
+        "q66": 21.72
+    },
+    "quantile_coverage_pct": {
+        "p10_p90_non_capped": 79.01,
+        "p08_p92_non_capped": 83.36,
+        "p10_p90_overall": 75.92,
+        "p08_p92_overall": 80.25
+    },
+    "walk_forward_validation": {
+        "splits": [
+            {
+                "split": "2023-09-01 to 2023-10-31",
+                "train_rows": 70990,
+                "test_rows": 16589,
+                "noncap_mae": 25.2372,
+                "noncap_w10": 41.97,
+                "overall_mae": 28.2638,
+                "overall_w10": 40.23
+            },
+            {
+                "split": "2023-10-01 to 2023-11-30",
+                "train_rows": 78651,
+                "test_rows": 17497,
+                "noncap_mae": 25.1552,
+                "noncap_w10": 41.58,
+                "overall_mae": 27.8456,
+                "overall_w10": 39.74
+            },
+            {
+                "split": "2023-11-01 to 2023-12-31",
+                "train_rows": 87579,
+                "test_rows": 17603,
+                "noncap_mae": 25.0044,
+                "noncap_w10": 41.73,
+                "overall_mae": 27.801,
+                "overall_w10": 39.7
+            }
+        ],
+        "mean_noncap_mae": 25.13,
+        "std_noncap_mae": 0.12,
+        "mean_noncap_w10": 41.76,
+        "std_noncap_w10": 0.2
+    },
+    "metrics_non_capped": {
+        "Linear Regression": {
+            "MAE": 31.8332,
+            "RMSE": 60.3559,
+            "R2": 0.2497,
+            "Within_5min_%": 19.24,
+            "Within_10min_%": 36.15
+        },
+        "Decision Tree": {
+            "MAE": 27.6112,
+            "RMSE": 46.0841,
+            "R2": 0.5626,
+            "Within_5min_%": 23.44,
+            "Within_10min_%": 41.48
+        },
+        "Random Forest": {
+            "MAE": 25.2904,
+            "RMSE": 40.2962,
+            "R2": 0.6656,
+            "Within_5min_%": 22.94,
+            "Within_10min_%": 41.34
+        },
+        "Gradient Boosting": {
+            "MAE": 25.0015,
+            "RMSE": 39.2866,
+            "R2": 0.6821,
+            "Within_5min_%": 22.82,
+            "Within_10min_%": 41.3
+        },
+        "HistGradient Boosting": {
+            "MAE": 25.0044,
+            "RMSE": 39.6757,
+            "R2": 0.6758,
+            "Within_5min_%": 23.09,
+            "Within_10min_%": 41.73
+        },
+        "LightGBM": {
+            "MAE": 24.9965,
+            "RMSE": 39.7109,
+            "R2": 0.6752,
+            "Within_5min_%": 23.06,
+            "Within_10min_%": 41.85
+        }
+    },
+    "metrics_overall": {
+        "Linear Regression": {
+            "MAE": 37.7285,
+            "RMSE": 77.0633,
+            "R2": 0.3165,
+            "Within_5min_%": 18.45,
+            "Within_10min_%": 34.69
+        },
+        "Decision Tree": {
+            "MAE": 29.629,
+            "RMSE": 49.6611,
+            "R2": 0.7162,
+            "Within_5min_%": 23.69,
+            "Within_10min_%": 40.85
+        },
+        "Random Forest": {
+            "MAE": 28.1542,
+            "RMSE": 44.8424,
+            "R2": 0.7686,
+            "Within_5min_%": 21.83,
+            "Within_10min_%": 39.32
+        },
+        "Gradient Boosting": {
+            "MAE": 28.1051,
+            "RMSE": 43.6775,
+            "R2": 0.7805,
+            "Within_5min_%": 21.71,
+            "Within_10min_%": 39.29
+        },
+        "HistGradient Boosting": {
+            "MAE": 27.801,
+            "RMSE": 43.4417,
+            "R2": 0.7828,
+            "Within_5min_%": 21.97,
+            "Within_10min_%": 39.7
+        },
+        "LightGBM": {
+            "MAE": 27.6918,
+            "RMSE": 43.3661,
+            "R2": 0.7836,
+            "Within_5min_%": 21.94,
+            "Within_10min_%": 39.81
+        }
+    },
+    "metrics_capped": {
+        "Linear Regression": {
+            "MAE": 152.9241,
+            "RMSE": 225.3916,
+            "R2": 0.0,
+            "Within_5min_%": 2.92,
+            "Within_10min_%": 6.07
+        },
+        "Decision Tree": {
+            "MAE": 69.0568,
+            "RMSE": 95.6997,
+            "R2": 0.0,
+            "Within_5min_%": 28.59,
+            "Within_10min_%": 28.59
+        },
+        "Random Forest": {
+            "MAE": 84.1137,
+            "RMSE": 97.8473,
+            "R2": 0.0,
+            "Within_5min_%": 0.0,
+            "Within_10min_%": 0.0
+        },
+        "Gradient Boosting": {
+            "MAE": 88.7496,
+            "RMSE": 95.0053,
+            "R2": 0.0,
+            "Within_5min_%": 0.0,
+            "Within_10min_%": 0.0
+        },
+        "HistGradient Boosting": {
+            "MAE": 82.4475,
+            "RMSE": 89.4635,
+            "R2": 0.0,
+            "Within_5min_%": 0.0,
+            "Within_10min_%": 0.0
+        },
+        "LightGBM": {
+            "MAE": 80.3593,
+            "RMSE": 88.3985,
+            "R2": 0.0,
+            "Within_5min_%": 0.0,
+            "Within_10min_%": 0.0
+        }
+    }
+}
